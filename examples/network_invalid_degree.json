@@ -1,0 +1,21 @@
+{
+  "_comment": "INVÁLIDO – n1 tem 1 vizinho (abaixo do min=2) e n3 tem 4 vizinhos (acima do max=3)",
+  "num_nodes": 5,
+  "min_neighbors": 2,
+  "max_neighbors": 3,
+  "resources": {
+    "n1": ["r1"],
+    "n2": ["r2"],
+    "n3": ["r3"],
+    "n4": ["r4"],
+    "n5": ["r5"]
+  },
+  "edges": [
+    ["n1", "n2"],
+    ["n2", "n3"],
+    ["n3", "n4"],
+    ["n3", "n5"],
+    ["n4", "n5"],
+    ["n2", "n4"]
+  ]
+}

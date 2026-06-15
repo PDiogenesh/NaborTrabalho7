@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  simulador:
+    build: .
+    container_name: p2p_simulator
+    # Habilita modo interativo no Docker
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./examples:/app/examples

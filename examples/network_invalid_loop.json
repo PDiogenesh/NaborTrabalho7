@@ -1,0 +1,16 @@
+{
+  "_comment": "INVÁLIDO – n2 possui uma aresta de loop (n2 → n2)",
+  "num_nodes": 3,
+  "min_neighbors": 1,
+  "max_neighbors": 4,
+  "resources": {
+    "n1": ["r1"],
+    "n2": ["r2"],
+    "n3": ["r3"]
+  },
+  "edges": [
+    ["n1", "n2"],
+    ["n2", "n2"],
+    ["n2", "n3"]
+  ]
+}

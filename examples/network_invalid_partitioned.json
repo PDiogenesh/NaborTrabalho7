@@ -1,0 +1,19 @@
+{
+  "_comment": "INVÁLIDO – Rede particionada em 2 componentes: {n1,n2,n3} e {n4,n5} sem conexão entre si",
+  "num_nodes": 5,
+  "min_neighbors": 1,
+  "max_neighbors": 4,
+  "resources": {
+    "n1": ["r1"],
+    "n2": ["r2"],
+    "n3": ["r3"],
+    "n4": ["r4"],
+    "n5": ["r5"]
+  },
+  "edges": [
+    ["n1", "n2"],
+    ["n1", "n3"],
+    ["n2", "n3"],
+    ["n4", "n5"]
+  ]
+}

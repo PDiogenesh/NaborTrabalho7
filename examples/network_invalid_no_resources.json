@@ -1,0 +1,17 @@
+{
+  "_comment": "INVÁLIDO – n2 não possui nenhum recurso",
+  "num_nodes": 4,
+  "min_neighbors": 1,
+  "max_neighbors": 4,
+  "resources": {
+    "n1": ["r1"],
+    "n3": ["r2"],
+    "n4": ["r3"]
+  },
+  "edges": [
+    ["n1", "n2"],
+    ["n2", "n3"],
+    ["n3", "n4"],
+    ["n4", "n1"]
+  ]
+}
