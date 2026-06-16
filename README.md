@@ -30,7 +30,7 @@ Simulador de algoritmos de busca em redes P2P não estruturadas, acessível inte
 
 ## Requisitos
 
-- **Python 3.10+** (nenhuma dependência externa é necessária)
+- **Python 3.10+**
 
 ---
 
