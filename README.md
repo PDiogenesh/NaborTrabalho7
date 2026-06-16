@@ -30,22 +30,22 @@ Simulador de algoritmos de busca em redes P2P não estruturadas, acessível inte
 
 ## Requisitos
 
-- **Docker** e **Docker Compose**
+- **Python 3.10+** (nenhuma dependência externa é necessária)
 
 ---
 
 ## Como Executar
 
-Como o simulador é um console interativo, rode o container da seguinte forma:
+Como o simulador é um console interativo, rode o script da seguinte forma:
 
 ```bash
-# Faz o build e já abre o menu interativo no seu terminal
-docker-compose run simulador
+# Inicia o simulador e abre o menu interativo no seu terminal
+python main.py
 ```
 
 Ou, se quiser passar todos os parâmetros de uma vez para rodar testes rápidos sem menu:
 ```bash
-docker-compose run simulador examples/network_small.json n1 r9 --algo flooding --ttl 10
+python main.py examples/network_small.json n1 r9 --algo flooding --ttl 10
 ```
 
 ---
@@ -89,8 +89,6 @@ Se alguma regra for violada, os erros são exibidos no terminal e o sistema pede
 
 ```text
 nabor7/
-├── docker-compose.yml
-├── Dockerfile
 ├── main.py             # Entry point (Menu Interativo CLI)
 ├── README.md           # Documentação
 ├── simulator/
