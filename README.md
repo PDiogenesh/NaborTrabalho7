@@ -31,6 +31,11 @@ Simulador de algoritmos de busca em redes P2P não estruturadas, acessível inte
 ## Requisitos
 
 - **Python 3.10+**
+- **matplotlib** e **networkx** (para visualização gráfica e animação)
+
+```bash
+pip install matplotlib networkx
+```
 
 ---
 
@@ -47,6 +52,21 @@ Ou, se quiser passar todos os parâmetros de uma vez para rodar testes rápidos 
 ```bash
 python main.py examples/network_small.json n1 r9 --algo flooding --ttl 10
 ```
+
+Flags opcionais disponíveis no modo direto:
+
+| Flag | Efeito |
+|------|--------|
+| `--historico` | Exibe o histórico passo a passo no terminal (QUERY, CHECK, DUPLIC, ACHOU, etc.) |
+| `--grafico` | Exibe o grafo da rede com cores indicando o caminho percorrido |
+| `--animar` | Exibe a animação frame a frame da busca com histórico ao vivo |
+
+Exemplo combinado:
+```bash
+python main.py examples/network_small.json n1 r9 --algo flooding --ttl 10 --historico --grafico --animar
+```
+
+No **modo interativo**, o programa pergunta se deseja ver o histórico, o grafo e a animação após cada busca, além de oferecer o **modo comparativo** (opção `2`) que roda os 4 algoritmos e exibe tabela + gráfico de barras.
 
 ---
 
@@ -88,12 +108,21 @@ Se alguma regra for violada, os erros são exibidos no terminal e o sistema pede
 ## Estrutura do Projeto
 
 ```text
-nabor7/
-├── main.py             # Entry point (Menu Interativo CLI)
+NaborTrabalho7/
+├── main.py             # Entry point (menu interativo + modo direto com flags)
 ├── README.md           # Documentação
 ├── simulator/
 │   ├── __init__.py
 │   ├── network.py      # Classe P2PNetwork (carregamento e validação)
-│   └── algorithms.py   # Os 4 algoritmos de busca (flooding, etc)
+│   ├── algorithms.py   # Os 4 algoritmos de busca
+│   ├── visualizer.py   # Grafo estático e animação (matplotlib + networkx)
+│   └── stats.py        # Comparativo dos 4 algoritmos (tabela + gráfico)
 └── examples/           # Redes de exemplo em JSON prontas para testar
+    ├── network_small.json               # 6 nós (válido)
+    ├── network_medium.json              # 12 nós (válido)
+    ├── network_large.json               # 20 nós (válido)
+    ├── network_invalid_degree.json      # Viola min/max vizinhos
+    ├── network_invalid_loop.json        # Self-loop
+    ├── network_invalid_no_resources.json# Nó sem recursos
+    └── network_invalid_partitioned.json # Rede particionada
 ```
